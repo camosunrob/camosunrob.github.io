@@ -1,24 +1,22 @@
 <!DOCTYPE html>
-<html lang="en-CA">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Teaching Mission Statement</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teaching Philosophy | Rob</title>
   <style>
     :root {
-      --blue: #0070c0;
-      --deep-blue: #174a7c;
-      --sky: #d9efff;
-      --green: #6fbf73;
-      --yellow: #ffd166;
-      --coral: #f28c8c;
-      --ink: #1f2933;
-      --muted: #5f6f7f;
-      --paper: #ffffff;
-      --soft-bg: #f7fbff;
-      --page-width: 1120px;
-      --profile-width: 340px;
-      --top-height: 430px;
+      --ink: #1d2430;
+      --muted: #5f6875;
+      --paper: #f7f5f0;
+      --panel: #ffffff;
+      --line: #ddd6ca;
+      --accent: #356b73;
+      --accent-dark: #244d54;
+      --gold: #b9843f;
+      --soft-blue: #e7f0f2;
+      --soft-gold: #f5ebda;
+      --shadow: 0 18px 45px rgba(29, 36, 48, 0.11);
     }
 
     * {
@@ -27,396 +25,476 @@
 
     body {
       margin: 0;
-      min-height: 100vh;
-      font-family: Arial, Helvetica, sans-serif;
       color: var(--ink);
-      background:
-        radial-gradient(circle at top left, rgba(255, 209, 102, 0.35), transparent 28rem),
-        radial-gradient(circle at bottom right, rgba(111, 191, 115, 0.25), transparent 26rem),
-        linear-gradient(135deg, #ffffff 0%, var(--soft-bg) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
+      background: var(--paper);
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
     }
 
     .page {
-      width: min(var(--page-width), 100%);
-      background: rgba(255, 255, 255, 0.94);
-      border: 1px solid rgba(0, 112, 192, 0.16);
-      border-radius: 28px;
-      box-shadow: 0 24px 70px rgba(23, 74, 124, 0.16);
+      min-height: 100vh;
       overflow: hidden;
     }
 
-    .accent-bar {
-      height: 12px;
-      background: linear-gradient(90deg, var(--blue), var(--green), var(--yellow), var(--coral));
+    .hero {
+      background:
+        linear-gradient(112deg, rgba(29, 36, 48, 0.93), rgba(36, 77, 84, 0.88)),
+        radial-gradient(circle at 80% 15%, rgba(185, 132, 63, 0.22), transparent 35%);
+      color: #fff;
     }
 
-    .content {
-      padding: clamp(2rem, 5vw, 4.5rem);
+    .hero-inner {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
       display: grid;
-      gap: 1.4rem;
-    }
-
-    .top-section {
-      display: grid;
-      grid-template-columns: var(--profile-width) minmax(0, 1fr);
-      gap: clamp(2rem, 5vw, 4rem);
-      align-items: stretch;
-      min-height: var(--top-height);
-    }
-
-    .profile-card,
-    .mission-panel {
-      min-height: var(--top-height);
-    }
-
-    .profile-card {
-      background: linear-gradient(180deg, rgba(217, 239, 255, 0.58), rgba(255, 255, 255, 0.95));
-      border: 1px solid rgba(23, 74, 124, 0.12);
-      border-radius: 28px;
-      padding: 1.6rem;
-      box-shadow: 0 16px 40px rgba(23, 74, 124, 0.1);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.85fr);
+      gap: 56px;
       align-items: center;
-      text-align: center;
+      padding: 72px 0 64px;
     }
 
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.82rem;
+      margin: 0 0 14px;
+      color: #f0d6af;
+      font-size: 0.83rem;
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--deep-blue);
-      background: var(--sky);
-      border-radius: 999px;
-      padding: 0.55rem 0.85rem;
-      white-space: nowrap;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 0.68rem;
-      height: 0.68rem;
-      background: var(--green);
-      border-radius: 50%;
-      box-shadow: 0 0 0 5px rgba(111, 191, 115, 0.18);
-    }
-
-    .profile-photo-wrap {
-      padding: 0.45rem;
-      border-radius: 999px;
-      background: linear-gradient(135deg, rgba(0, 112, 192, 0.25), rgba(111, 191, 115, 0.25), rgba(255, 209, 102, 0.35));
-      box-shadow: 0 14px 34px rgba(23, 74, 124, 0.16);
-    }
-
-    .profile-photo {
-      display: block;
-      width: 215px;
-      height: 215px;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 50%;
-      border: 6px solid #ffffff;
-      background: #ffffff;
-    }
-
-    .name-block h2 {
-      margin: 0 0 0.25rem;
-      color: var(--deep-blue);
-      font-size: 1.45rem;
-      letter-spacing: -0.02em;
-    }
-
-    .name-block p {
-      margin: 0;
-      color: var(--muted);
-      font-weight: 700;
-      line-height: 1.4;
-      max-width: 260px;
-    }
-
-    .mission-panel {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 1.35rem;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(3rem, 6vw, 5.25rem);
-      line-height: 0.94;
-      color: var(--deep-blue);
-      letter-spacing: -0.055em;
-      max-width: 720px;
+      max-width: 760px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.5rem, 6vw, 5.5rem);
+      line-height: 0.98;
+      font-weight: 700;
+      overflow-wrap: break-word;
     }
 
-    .mission-card {
-      background: var(--paper);
-      border-radius: 24px;
-      padding: clamp(1.4rem, 3vw, 2rem);
-      border: 1px solid rgba(31, 41, 51, 0.08);
-      box-shadow: 0 16px 40px rgba(31, 41, 51, 0.08);
-      position: relative;
-    }
-
-    .mission-card::before {
-      content: "“";
-      position: absolute;
-      top: -1.2rem;
-      left: 1.4rem;
-      font-size: 5.5rem;
-      line-height: 1;
-      color: rgba(0, 112, 192, 0.14);
-      font-family: Georgia, serif;
+    .hero-copy {
+      max-width: 710px;
+      margin: 28px 0 0;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: clamp(1.08rem, 2vw, 1.28rem);
+      overflow-wrap: break-word;
     }
 
     .mission {
+      margin-top: 34px;
+      padding: 24px 26px;
+      border-left: 5px solid var(--gold);
+      background: rgba(255, 255, 255, 0.09);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.09);
+    }
+
+    .mission p {
       margin: 0;
-      font-size: clamp(1.22rem, 2.15vw, 1.8rem);
-      line-height: 1.42;
-      font-weight: 700;
-      color: var(--ink);
-    }
-
-    .mission strong {
-      color: var(--blue);
-    }
-
-    .theme-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
-      margin-top: 0;
-    }
-
-    .value-card {
-      background: rgba(255, 255, 255, 0.84);
-      border: 1px solid rgba(23, 74, 124, 0.12);
-      border-radius: 20px;
-      padding: 1.2rem;
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 0.85rem;
-      align-items: start;
-      box-shadow: 0 10px 24px rgba(23, 74, 124, 0.07);
-      min-height: 132px;
-    }
-
-    .icon {
-      width: 2.55rem;
-      height: 2.55rem;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      font-size: 1.25rem;
-      background: var(--sky);
-      color: var(--deep-blue);
-      font-weight: 700;
-    }
-
-    .value-card:nth-child(2) .icon { background: rgba(111, 191, 115, 0.24); }
-    .value-card:nth-child(3) .icon { background: rgba(255, 209, 102, 0.32); }
-    .value-card:nth-child(4) .icon { background: rgba(242, 140, 140, 0.22); }
-
-    .value-card h3 {
-      margin: 0 0 0.25rem;
-      font-size: 1.04rem;
-      color: var(--deep-blue);
-    }
-
-    .value-card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.42;
-      font-size: 0.96rem;
-    }
-
-    .footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      padding: 1.2rem clamp(2rem, 5vw, 4.5rem);
-      background: rgba(217, 239, 255, 0.55);
-      color: var(--deep-blue);
-      font-size: 0.95rem;
-      font-weight: 700;
-    }
-
-    .footer span:last-child {
-      color: var(--muted);
+      color: #fff;
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
       font-weight: 600;
     }
 
-    @media (max-width: 980px) {
-      body {
-        align-items: flex-start;
-        padding: 1rem;
+    .portrait-wrap {
+      align-self: stretch;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .portrait-card {
+      width: min(420px, 100%);
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.14);
+      box-shadow: var(--shadow);
+    }
+
+    .portrait-card img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: 50% 20%;
+    }
+
+    main {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 54px 0 70px;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.42fr);
+      gap: 34px;
+      align-items: start;
+      margin-bottom: 38px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .story {
+      padding: 34px;
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.65rem, 3vw, 2.25rem);
+      line-height: 1.15;
+      color: var(--accent-dark);
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+      line-height: 1.3;
+      color: var(--accent-dark);
+    }
+
+    p {
+      margin: 0 0 16px;
+      overflow-wrap: break-word;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    .quick-facts {
+      padding: 26px;
+      background: var(--soft-blue);
+    }
+
+    .fact {
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(53, 107, 115, 0.22);
+    }
+
+    .fact:first-child {
+      padding-top: 0;
+    }
+
+    .fact:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .fact span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .fact strong {
+      display: block;
+      margin-top: 4px;
+      font-size: 1.08rem;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      margin: 26px 0 38px;
+    }
+
+    .value-card {
+      min-height: 250px;
+      padding: 28px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+    }
+
+    .value-card:nth-child(2) {
+      background: var(--soft-gold);
+    }
+
+    .value-card:nth-child(3) {
+      background: var(--soft-blue);
+    }
+
+    .number {
+      display: inline-flex;
+      width: 42px;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      border: 2px solid currentColor;
+      border-radius: 50%;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .experience {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      gap: 30px;
+      align-items: start;
+      padding: 34px;
+      margin-top: 22px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .experience-list {
+      display: grid;
+      gap: 16px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .experience-list li {
+      padding: 18px 20px;
+      border-left: 4px solid var(--accent);
+      background: #f9faf8;
+    }
+
+    .closing {
+      margin-top: 38px;
+      padding: 34px;
+      color: #fff;
+      background: var(--accent-dark);
+    }
+
+    .closing h2 {
+      color: #fff;
+    }
+
+    .closing p {
+      max-width: 840px;
+      color: rgba(255, 255, 255, 0.89);
+      font-size: 1.07rem;
+    }
+
+    footer {
+      padding: 24px 20px 34px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 850px) {
+      .hero-inner,
+      .intro-grid,
+      .experience {
+        grid-template-columns: 1fr;
       }
 
-      .content {
-        padding: 1.5rem;
+      .hero-inner {
+        gap: 36px;
+        padding-top: 48px;
       }
 
-      .top-section {
-        grid-template-columns: 300px minmax(0, 1fr);
-        gap: 1.5rem;
-        min-height: 400px;
+      .portrait-wrap {
+        justify-content: flex-start;
       }
 
-      .profile-card,
-      .mission-panel {
-        min-height: 400px;
+      .portrait-card {
+        width: min(360px, 100%);
       }
 
-      .profile-card {
-        padding: 1.3rem;
+      .section-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero-inner,
+      main {
+        width: min(100% - 28px, 1160px);
       }
 
-      .profile-photo {
-        width: 190px;
-        height: 190px;
+      .mission,
+      .story,
+      .quick-facts,
+      .value-card,
+      .experience,
+      .closing {
+        padding: 22px;
       }
 
       h1 {
-        font-size: clamp(2.6rem, 6.5vw, 4.2rem);
+        font-size: clamp(2.1rem, 10vw, 2.45rem);
+        line-height: 1.06;
       }
 
-      .mission {
-        font-size: clamp(1.12rem, 2.25vw, 1.45rem);
-      }
-    }
-
-    @media (max-width: 760px) {
-      .top-section {
-        grid-template-columns: 1fr;
-        min-height: auto;
+      .hero-copy {
+        font-size: 1rem;
       }
 
-      .profile-card,
-      .mission-panel {
-        min-height: auto;
-      }
-
-      .profile-card {
-        max-width: 430px;
-        justify-self: center;
-        gap: 1rem;
-      }
-
-      h1 {
-        text-align: center;
-      }
-
-      .footer {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    @media (max-width: 620px) {
-      .theme-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .profile-photo {
-        width: 185px;
-        height: 185px;
-      }
-    }
-
-    @media print {
-      body {
-        background: #ffffff;
-        padding: 0;
-      }
-
-      .page {
-        box-shadow: none;
-        border-radius: 0;
-        border: none;
+      .mission p {
+        font-size: 0.98rem;
       }
     }
   </style>
 </head>
 <body>
-  <main class="page" aria-label="Teaching mission statement">
-    <div class="accent-bar" aria-hidden="true"></div>
-
-    <section class="content">
-      <div class="top-section">
-        <aside class="profile-card" aria-label="Profile">
-          <div class="eyebrow">Personal Teaching Mission</div>
-
-          <div class="profile-photo-wrap">
-            <img src="RobPhoto2.jpg" alt="Photo of Rob Sorensen" class="profile-photo" />
-          </div>
-
-          <div class="name-block">
-            <h2>Rob Sorensen</h2>
-            <p>Teaching with purpose, clarity, and care</p>
-          </div>
-        </aside>
-
-        <section class="mission-panel" aria-label="Mission statement">
-          <h1>Building a Better Tomorrow</h1>
-
-          <div class="mission-card">
-            <p class="mission">
-              To help build a <strong>better tomorrow</strong> by preparing students to become educated, curious, caring, and dedicated people who think clearly, act ethically, adapt to change, and contribute meaningfully to their workplaces, communities, and the wider world.
+  <div class="page">
+    <header class="hero">
+      <div class="hero-inner">
+        <div>
+          <p class="eyebrow">Camosun College | Business Education</p>
+          <h1>Teaching for clarity, care, and practical impact.</h1>
+          <p class="hero-copy">
+            I teach business students with a focus on thoughtful decision-making,
+            ethical practice, inclusive learning, and the confidence to keep adapting.
+          </p>
+          <div class="mission" aria-label="Teaching mission">
+            <p>
+              To help build a better tomorrow by preparing students to become educated,
+              curious, caring, and dedicated people who think clearly, act ethically,
+              adapt to change, and contribute meaningfully to their workplaces,
+              communities, and the wider world.
             </p>
           </div>
-        </section>
+        </div>
+        <div class="portrait-wrap">
+          <div class="portrait-card">
+            <img src="RobPhoto2.jpg" alt="Portrait of Rob, a Camosun College business instructor">
+          </div>
+        </div>
       </div>
+    </header>
 
-      <section class="theme-grid" aria-label="Mission themes">
-        <div class="value-card">
-          <div class="icon" aria-hidden="true">↗</div>
-          <div>
-            <h3>Future-focused</h3>
-            <p>Teaching as a practical contribution to a better, more thoughtful future.</p>
-          </div>
-        </div>
+    <main>
+      <section class="intro-grid" aria-labelledby="philosophy-heading">
+        <article class="story panel">
+          <h2 id="philosophy-heading">Teaching Philosophy</h2>
+          <p>
+            My teaching starts with the belief that students learn best when ideas feel
+            connected to real choices, real workplaces, and real responsibilities. I aim
+            to make business education practical without making it narrow: students
+            should leave with tools they can use now and habits of thinking that will
+            continue serving them as technology, organizations, and communities change.
+          </p>
+          <p>
+            In the classroom, that means combining clear explanations, applied examples,
+            reflection, discussion, and hands-on activities. I want students to practice
+            asking better questions, weighing evidence, considering people affected by
+            decisions, and communicating their thinking in ways others can understand.
+          </p>
+          <p>
+            I also design learning with accessibility and belonging in mind. Universal
+            Design for Learning encourages me to give students multiple ways to engage,
+            participate, and show what they know. PRME principles remind me that business
+            education should prepare students to make responsible, ethical, and
+            sustainable contributions beyond the classroom.
+          </p>
+        </article>
 
-        <div class="value-card">
-          <div class="icon" aria-hidden="true">?</div>
-          <div>
-            <h3>Curious and capable</h3>
-            <p>Helping students build confidence, judgment, and the habit of asking better questions.</p>
+        <aside class="quick-facts panel" aria-label="Teaching profile highlights">
+          <div class="fact">
+            <span>Institution</span>
+            <strong>Camosun College</strong>
           </div>
-        </div>
-
-        <div class="value-card">
-          <div class="icon" aria-hidden="true">✓</div>
-          <div>
-            <h3>Clear and ethical</h3>
-            <p>Encouraging students to think carefully, act responsibly, and make sound decisions.</p>
+          <div class="fact">
+            <span>Teaching Area</span>
+            <strong>Business students</strong>
           </div>
-        </div>
-
-        <div class="value-card">
-          <div class="icon" aria-hidden="true">∞</div>
-          <div>
-            <h3>Meaningful contribution</h3>
-            <p>Preparing students to contribute in their workplaces, communities, and beyond.</p>
+          <div class="fact">
+            <span>Priorities</span>
+            <strong>UDL, PRME, ethical practice, applied learning</strong>
           </div>
-        </div>
+          <div class="fact">
+            <span>Location</span>
+            <strong>Victoria, British Columbia</strong>
+          </div>
+        </aside>
       </section>
-    </section>
 
-    <footer class="footer">
-      <span>Rob Sorensen</span>
-      <span>Building a better tomorrow through teaching</span>
+      <section class="section-grid" aria-label="Teaching commitments">
+        <article class="value-card">
+          <span class="number">1</span>
+          <h3>Clear Thinking</h3>
+          <p>
+            Students need more than correct answers. They need practice organizing
+            information, identifying assumptions, explaining trade-offs, and using
+            evidence to support sound decisions.
+          </p>
+        </article>
+        <article class="value-card">
+          <span class="number">2</span>
+          <h3>Ethical Action</h3>
+          <p>
+            Business decisions affect people. I encourage students to consider fairness,
+            responsibility, sustainability, and the wider impact of the systems they help
+            design, manage, or improve.
+          </p>
+        </article>
+        <article class="value-card">
+          <span class="number">3</span>
+          <h3>Inclusive Learning</h3>
+          <p>
+            Students arrive with different experiences, strengths, and constraints. I try
+            to create courses where expectations are transparent, support is visible, and
+            participation can take more than one meaningful form.
+          </p>
+        </article>
+      </section>
+
+      <section class="experience" aria-labelledby="experience-heading">
+        <div>
+          <h2 id="experience-heading">Experience and Approach</h2>
+          <p>
+            My work as an instructor is grounded in helping students connect concepts to
+            the business contexts they are likely to encounter: teams, customers, data,
+            digital tools, processes, change, and organizational goals.
+          </p>
+        </div>
+        <ul class="experience-list">
+          <li>
+            <h3>Applied business learning</h3>
+            <p>
+              I use examples, scenarios, and activities that help students translate
+              course ideas into workplace-ready judgment and communication.
+            </p>
+          </li>
+          <li>
+            <h3>Student-centred course design</h3>
+            <p>
+              I structure courses with clear outcomes, purposeful assessments, practical
+              feedback, and room for students to build confidence over time.
+            </p>
+          </li>
+          <li>
+            <h3>Responsible use of technology</h3>
+            <p>
+              I encourage students to understand digital tools critically, including how
+              technology can support better work and where human judgment still matters.
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="closing" aria-labelledby="closing-heading">
+        <h2 id="closing-heading">What I Hope Students Carry Forward</h2>
+        <p>
+          I hope students leave my courses feeling more capable, more curious, and more
+          prepared to contribute. Business education should help people do good work with
+          skill and integrity, and it should help them imagine the kind of organizations
+          and communities they want to help build.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      Teaching portfolio page for Rob | Camosun College
     </footer>
-  </main>
+  </div>
 </body>
 </html>
